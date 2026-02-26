@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: sap
+    database: fea_academy
+    schema: northwind
+    tables:
+      - name: orders
+        description: Tabela de ordens da empresa Nortwind
+        columns:
+          - name: order_id
+            description: Chave primaria da tabela de ordens
+            tests:
+              - unique
+              - not_null
