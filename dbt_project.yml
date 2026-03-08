@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
+  aworks_dbt:
     01_bronze:
       +schema: bronze  # Modelos em models/staging/ vão para <target>_stg
       +materialized: table
