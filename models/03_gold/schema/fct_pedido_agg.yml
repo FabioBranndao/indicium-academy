@@ -1,0 +1,53 @@
+models:
+  - name: fct_pedido_agg
+    description: Tabela fato contendo a todos os produtos e seus respectivos faturamentos por produto, Ano, Mes, pais, Estado, Cidade
+    columns:
+      - name: pedido_id
+        description: Id do pedido de venda
+        tests:
+          - not_null
+      - name: data_pedido
+        description: Data realizado do pedido de venda
+        tests:
+          - not_null
+      - name: dsc_cidade
+        description: Descrição da cidade
+        tests:
+          - not_null
+      - name: dsc_estado
+        description: Descrição do estado
+        tests:
+          - not_null
+      - name: dsc_pais
+        description: Descrição do país
+        tests:
+          - not_null
+      - name: productid
+        description: Código do produto vendido
+        tests:
+          - not_null
+      - name: dsc_produto
+        description: Descrição do produto vendido
+        tests:
+          - not_null
+      - name: customerid
+        description: Código do cliente a quem efetuou a compra
+        tests:
+          - not_null
+      - name: cardtype
+        description: Tipo de Cartao de credito referente a venda efetuada
+        tests:
+          - not_null
+      - name: quantidade
+        description: Quantidade negociada
+        tests:
+          - not_null
+      - name: faturamento_bruto
+        description: Valor total negociado sem desconto
+        tests:
+          - not_null
+      - name: faturamento_com_desconto
+        description: Valor total negociado com desconto
+        tests:
+          - not_null
+

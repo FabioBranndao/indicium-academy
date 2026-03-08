@@ -1,0 +1,18 @@
+models:
+  - name: dim_clientes
+    description: Dimensão de clientes
+    columns:
+      - name: customerid
+        description: Id do cliente
+        tests:
+          - not_null
+          - unique
+      - name: personid
+        description: Id da pessoa que representa o cliente
+        tests:
+          - not_null
+          - unique
+      - name: nome_completo
+        description: Nome completo do cliente contanto
+        tests:
+          - not_null

@@ -1,0 +1,88 @@
+models:
+  - name: fct_vendas_total_agg
+    description: Tabela fato com todas vendas dispostos na última granularidade de produto e cliente por Ano, Mes, pais, Estado, Cidade, Tipo Cartão de Credito.
+    columns:
+      - name: id
+        description: Id único do item da venda (Id do pedido + Item do pedido)
+        tests:
+          - not_null
+      - name: ano
+        description: Ano referente a venda
+        tests:
+          - not_null
+      - name: mes 
+        description: Mes referente a venda
+        tests:
+          - not_null
+      - name: pedido_id
+        description: Id do pedido de venda
+        tests:
+          - not_null
+      - name: item_id
+        description: Id do item de venda
+        tests:
+          - not_null
+      - name: data_pedido
+        description: Data da Venda
+        tests:
+          - not_null
+      - name: status
+        description: Status da venda (Sem descrição relevante)
+        tests:
+          - not_null
+      - name: customerid
+        description: Id do Cliente
+        tests:
+          - not_null
+      - name: id_ender_cobranca
+        description: Id do endereço de cobrança
+        tests:
+          - not_null
+      - name: cardtype
+        description: Tipo de Cartão de Credito efetuado no ato da venda
+        tests:
+          - not_null
+      - name: productid
+        description: Id do produto
+        tests:
+          - not_null
+      - name: vlr_unitario
+        description: Valor unitario do produto
+        tests:
+          - not_null
+      - name: quantidade
+        description: Quantidade negociada
+        tests:
+          - not_null
+      - name: vlr_desconto
+        description: Valor do desconto
+        tests:
+          - not_null
+      - name: vlr_total_item
+        description: Valor do item negociado sem desconto
+        tests:
+          - not_null
+      - name: vlr_total_com_desconto
+        description: Valor do item negociado com desconto
+        tests:
+          - not_null
+      - name: frete_alocado
+        description: Valor do frete
+        tests:
+          - not_null
+      - name: flg_desconto
+        description: Flag informativo se o item tem desconto
+        tests:
+          - not_null
+      - name: dsc_cidade
+        description: Descrição da Cidade
+        tests:
+          - not_null
+      - name: dsc_estado
+        description: Descrição do Estado
+        tests:
+          - not_null
+      - name: dsc_pais
+        description: Descrição do pais
+        tests:
+          - not_null
