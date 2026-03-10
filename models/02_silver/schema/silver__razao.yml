@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: silver__razao
+    description: Dimensão de razão do pedido
+    columns:
+      - name: salesreasonid
+        description: Id do razão do pedido 
+        tests:
+          - relationships:
+               to: ref('stg_sap_aworks__sales_salesreason')
+               field: salesreasonid

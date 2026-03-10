@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: silver__pedido
+    description: Dimensão de pedido
+    columns:
+      - name: pedido_id
+        description: Id do pedido 
+        tests:
+          - relationships:
+               to: ref('stg_sap_aworks__sales_salesorderheader')
+               field: pedido_id
+      - name: creditcardid
+        description: Id do cartão de credito 
+        tests:
+          - relationships:
+               to: ref('stg_sap_aworks__sales_creditcard')
+               field: creditcardid
