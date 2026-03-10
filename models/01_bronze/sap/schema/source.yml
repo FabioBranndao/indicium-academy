@@ -1,0 +1,114 @@
+version: 2
+
+sources:
+  - name: raw
+    database: fea_academy
+    schema: adventure_works
+    tables:
+      - name: sales_salesorderheader
+        description: tabela de ordens de pedidos do ERP do adventure works
+        columns:
+          - name: salesorderid
+            description: Coluna de chave primaria da tabela Ordens de pedidos
+            tests:
+              - unique
+              - not_null
+          - name: customerid
+            description: Chave extrangeira de cliente da ordem de pedidos
+            tests:
+              - not_null
+      - name: sales_salesorderdetail
+        description: tabela de itens de pedidos do adventure works
+        columns:
+          - name: salesorderid
+            description: Coluna com a chave extrageira do codigo do pedido de venda
+            tests:
+              - not_null
+          - name: salesorderdetailid
+            description: coluna com a chave primaria do item do pedido de venda
+            tests:
+              - unique
+              - not_null
+      - name: person_address
+        description: Endereço do cliente
+        columns:
+          - name: addressid
+            description: chave primaria do codigo do endereço do cliente
+            tests:
+              - unique
+              - not_null
+          - name: stateprovinceid
+            description: coluna contendo a chave secundaria da provincia/estado do cliente
+            tests:
+              - not_null
+      - name: person_stateprovince
+        description: cadastro de provincias/estados do cliente de vendas
+        columns:
+          - name: stateprovinceid
+            description: coluna de chave primaria contendo o codigo do estado
+            tests:
+              - unique
+              - not_null
+          - name: countryregioncode
+            description: coluna com a chave extrageira com o codigo do pais do cliente
+            tests:
+              - not_null
+      - name: person_countryregion
+        description: cadastro de paises dos clientes
+        columns:
+          - name: countryregioncode
+            description: Coluna com o codigo do país
+            tests:
+              - unique
+      - name: sales_salesorderheadersalesreason
+        description: tabela com o relacionamento da codificação das razoes de venda com o pedido de venda
+        columns:
+          - name: salesorderid
+            description: Codigo da Ordem de Venda
+            tests:
+              - not_null
+          - name: salesreasonid
+            description: Codigo da razao de venda
+            tests:
+              - not_null
+      - name: sales_salesreason
+        description: Tabela com todas as razoes de venda
+        columns:
+          - name: salesreasonid
+            description: coluna com o codigo das razoes de venda
+            tests:
+              - not_null
+              - unique
+      - name: sales_creditcard
+        description: tipode de cartao de credito dos clientes
+        columns:
+          - name: creditcardid
+            description: coluna com o codigo do tipo deo cartao de credito
+            tests:
+              - unique
+              - not_null
+      - name: person_person
+        description: Cadastro de Clientes - person
+        columns:
+          - name: businessentityid
+            description: Codigo do CLiente/Person
+            tests:
+              - not_null
+              - unique
+      - name: production_product
+        description: Cadastro de produtos
+        columns:
+          - name: productid
+            description: Coluna com a chave primaria do Codigo do produto
+            tests:
+              - not_null
+              - unique
+      - name: sales_customer
+        description: Tabela de integração entre o cliente e a pessoa do pedido de venda        
+        columns:
+          - name: customerid
+            description: Chave do Cliente vinculado ao Pedido de Venda
+            tests:
+              - not_null
+          - name: personid
+            description: Chave da pessoa representativa do Cliente ao Pedido de Venda

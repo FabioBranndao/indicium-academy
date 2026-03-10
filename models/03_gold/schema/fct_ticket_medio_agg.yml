@@ -1,0 +1,48 @@
+models:
+  - name: fct_ticket_medio_agg
+    description: Tabela fato com todos os produtos e seu respectivo calculo do ticket medio por Ano, Mes, Pais, Estado, Cidade
+    columns:
+      - name: ano
+        description: Ano referente a venda
+        tests:
+          - not_null
+      - name: mes
+        description: Mes referente a venda
+        tests:
+          - not_null
+      - name: dsc_cidade
+        description: Cidade a que pertence a venda
+        tests:
+          - not_null
+      - name: dsc_estado
+        description: Estado a que pertence a venda
+        tests:
+          - not_null
+      - name: dsc_pais
+        description: Pais a que pertence a venda
+        tests:
+          - not_null
+      - name: productid
+        description: Codigo do produto
+        tests:
+          - not_null
+      - name: dsc_produto
+        description: Descricao do produto
+        tests:
+          - not_null
+      - name: numero_de_pedidos
+        description: Quantidade de pedidos
+        tests:
+          - not_null
+      - name: faturamento_bruto
+        description: Valor total negociado sem desconto
+        tests:
+          - not_null
+      - name: faturamento_com_desconto
+        description: Valor total negociado com desconto
+        tests:
+          - not_null
+      - name: ticket_medio
+        description: Calculo do ticket medio = Faturamento bruto - descontos do produto / número de pedidos no período de análise
+        tests:
+          - not_null
